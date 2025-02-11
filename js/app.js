@@ -1,68 +1,22 @@
-
-const clickBtn = document.getElementById('click_menu');
-const containerHeader = document.querySelector('.header__main');
-const btnText = clickBtn.querySelector('.btn-text');
+const clickBtn = document.getElementById('click_menu')
+const containerHeader = document.querySelector('.header__main')
+const btnText = clickBtn.querySelector('.btn-text')
 
 clickBtn.addEventListener('click', () => {
-  if (containerHeader.classList.contains('show')) {
-    containerHeader.classList.remove('show');
-    setTimeout(() => {
-      containerHeader.style.display = 'none';
-    }, 500);
-    btnText.style.transform = 'rotate(0deg)';
-  } else {
-    containerHeader.style.display = 'block';
-    setTimeout(() => {
-      containerHeader.classList.add('show');
-    }, 10);
-    btnText.style.transform = 'rotate(90deg)';
-  }
-});
-
-
-const gallery = document.querySelector('.gallery')
-const images = document.querySelectorAll('.image')
-const fullImageContainer = document.querySelector('.fullImageContainer')
-const fullImage = document.createElement('img')
-
-let currentIndex = 0
-
-fullImageContainer.classList.add('full-image-container')
-fullImage.classList.add('full-image')
-fullImageContainer.appendChild(fullImage)
-document.body.appendChild(fullImageContainer)
-
-function openImage(index) {
-	currentIndex = index
-	fullImage.src = images[currentIndex].src
-	fullImageContainer.style.display = 'flex'
-}
-
-function closeImage() {
-	fullImageContainer.style.display = 'none'
-}
-
-function handleKeydown(event) {
-	if (fullImageContainer.style.display === 'flex') {
-		if (event.key === 'ArrowRight') {
-			currentIndex = (currentIndex + 1) % images.length
-			fullImage.src = images[currentIndex].src
-		} else if (event.key === 'ArrowLeft') {
-			currentIndex = (currentIndex - 1 + images.length) % images.length
-			fullImage.src = images[currentIndex].src
-		} else if (event.key === 'Escape') {
-			closeImage()
-		}
+	if (containerHeader.classList.contains('show')) {
+		containerHeader.classList.remove('show')
+		setTimeout(() => {
+			containerHeader.style.display = 'none'
+		}, 500)
+		btnText.style.transform = 'rotate(0deg)'
+	} else {
+		containerHeader.style.display = 'block'
+		setTimeout(() => {
+			containerHeader.classList.add('show')
+		}, 10)
+		btnText.style.transform = 'rotate(90deg)'
 	}
-}
-
-images.forEach((image, index) => {
-	image.addEventListener('click', () => openImage(index))
 })
-
-fullImageContainer.addEventListener('click', closeImage)
-
-document.addEventListener('keydown', handleKeydown)
 
 const btnObj = document.querySelectorAll('.button-obj')
 const textObj = document.querySelectorAll('.text-obj')
@@ -70,7 +24,7 @@ const textObj = document.querySelectorAll('.text-obj')
 btnObj.forEach((button, index) => {
 	button.addEventListener('click', () => {
 		const text = textObj[index]
-		
+
 		if (text.style.display === 'none') {
 			text.style.display = 'block'
 		} else {
@@ -78,7 +32,6 @@ btnObj.forEach((button, index) => {
 		}
 	})
 })
-
 
 const cardContainerContent = document.querySelector(
 	'.card-information-container'
@@ -124,27 +77,49 @@ deleteButtons.forEach((button) => {
 	})
 })
 
-const btnOpen = document.getElementById('btn_open');
-const textOpen = document.getElementById('open-text');
+const btnOpen = document.getElementById('btn_open')
+const textOpen = document.getElementById('open-text')
 
 btnOpen.addEventListener('click', () => {
-    textOpen.textContent = `1. Гуси, що врятували Рим (Давній Рим)
-
-Колись галли намагалися захопити Капітолійський пагорб у Римі. Вони підібралися вночі, сподіваючись, що ніхто їх не помітить. Але в храмі богині Юнони жили священні гуси, які здійняли гучний галас, коли відчули небезпеку. Їхній крик розбудив римлян, і ті змогли відбити напад. З того часу римляни шанували гусей як символ пильності.
+	if (textOpen.textContent.trim() === '') {
+		textOpen.textContent = `1. Гуси, що врятували Рим (Давній Рим)
+Коли галли вночі підкралися до Капітолія, священні гуси з храму Юнони здійняли галас і розбудили римлян, які змогли відбити напад. Відтоді гусей шанували як символ пильності.
 
 2. Чарівна гусяча шия (Українська казка)
-
-Одного разу бідний хлопець врятував поранену гуску, не знаючи, що вона чарівна. У подяку вона подарувала йому перо, яке могло виконати три бажання. Хлопець забажав багатства, мудрості та доброї дружини. Його життя змінилося, і він завжди пам’ятав про свою рятівницю.
+Бідний хлопець врятував поранену гуску, а вона подарувала йому перо, що виконувало три бажання. Завдяки цьому він отримав багатство, мудрість і щасливе життя.
 
 3. Дика гуска та її відданість (Китайська легенда)
-
-В давні часи одна дика гуска врятувала свого господаря, китайського мисливця, який потрапив у пастку. Вона прилетіла до людей і вказала їм дорогу до нього. Коли господаря знайшли, він відмовився від полювання на гусей, розуміючи їхню мудрість і відданість.
+Дика гуска врятувала мисливця, привівши людей до нього. Вдячний чоловік зрозумів мудрість цих птахів і відмовився від полювання.
 
 4. Гусак із золотою шийкою (Німецька казка)
-
-Одного разу бідна дівчина допомогла старій бабусі, і та подарувала їй гусака із золотою шийкою. Гусак мав чарівну силу – кожен, хто намагався його вкрасти, прилипав до нього. Так дівчина викрила жадібних і злих людей, а добрі люди отримали винагороду.
+Дівчина отримала чарівного гусака, до якого прилипали всі жадібні люди. Так вона викрила нечестивців і отримала винагороду.
 
 5. Гуси, що несуть дитину (Скандинавський міф)
+Гуси у міфах літали між світами, несучи душі дітей до їхніх батьків. Саме з цієї легенди виник образ лелеки, що приносить немовлят.`
+	} else {
+		textOpen.textContent = ''
+	}
+})
 
-У північних легендах гуси асоціювалися з духами дітей, що ще не народилися. Вважалося, що вони літають між світом живих і світом духів, несучи новонароджених до їхніх батьків. Саме з цієї легенди згодом з’явився образ лелеки, що приносить немовлят.`;
-});
+const btnClickGame = document.getElementById('click-btn')
+const clickerText = document.getElementById('click-message')
+const gooseImg = document.getElementById('goose-img')
+let count = 0
+
+btnClickGame.addEventListener('click', () => {
+	count++
+	clickerText.textContent = count
+
+	if (count === 25) {
+		gooseImg.src = 'imges/litle.webp'
+	}
+	else if (count === 50) {
+		gooseImg.src = 'imges/Goose.webp'
+	}
+	else if (count === 75) {
+		gooseImg.src = 'imges/modGoose.webp'
+	}
+	else if (count === 100) {
+		gooseImg.src = 'https://th.bing.com/th/id/R.06927f154ea6327d56b4a12f6a258bd6?rik=HLyknq7W4ZKFbA&pid=ImgRaw&r=0'
+	}
+})

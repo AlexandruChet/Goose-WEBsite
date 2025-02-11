@@ -120,7 +120,7 @@ header {
 		background-size: cover;
 		background-position: center;
 		background-blend-mode: overlay;
-		height: 150px;
+		height: 10vw;
 		padding-bottom: 3rem;
 		nav {
 			display: flex;
@@ -129,7 +129,7 @@ header {
 			img {
 				margin-right: 10%;
 				border-radius: 100px;
-				margin-top: 1.5vw;
+				margin-top: 3vw;
 				transition: all 1s;
 				&:hover {
 					transform: rotate(1080deg);
@@ -137,6 +137,7 @@ header {
 			}
 
 			ul {
+				margin-top: 3vw;
 				margin-left: 5rem;
 				text-align: center;
 				justify-content: center;
@@ -149,10 +150,10 @@ header {
 					display: flex;
 					justify-content: center;
 					align-items: center;
-					font-size: 2rem;
+					font-size: 2vw;
 					background-color: $white;
-					padding: 30px;
-					border-radius: 100px;
+					padding: 1vw;
+					border-radius: 10vw;
 					transition: 2s all;
 					&:hover {
 						color: $white;
@@ -167,13 +168,13 @@ header {
 main {
 	.parallax {
 		background-image: url(https://th.bing.com/th/id/R.06927f154ea6327d56b4a12f6a258bd6?rik=HLyknq7W4ZKFbA&pid=ImgRaw&r=0);
-		height: 100vh;
+		height: 100vw;
+		width: 100%;
 		background-attachment: fixed;
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
 	}
-
 	.content-section {
 		font-family: Arial, Helvetica, sans-serif;
 		padding-top: 100px;
@@ -276,10 +277,10 @@ main {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		height: 100vh;
 		background: linear-gradient(to right, #ff8c00, #ff0080);
 		padding: 20px;
 		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		padding-bottom: 5%;
 		.title-text {
 			text-align: center;
 			background: #fff;
@@ -319,11 +320,17 @@ main {
 				cursor: pointer;
 				transition: background 0.3s ease;
 			}
-
 			.open_text {
-				font-size: 16px;
-				color: #444;
-				margin-top: 15px;
+				font-size: 1rem;
+				line-height: 1.6;
+				color: #333;
+				max-width: 100%;
+				white-space: pre-wrap;
+				overflow-wrap: break-word;
+				padding: 10px;
+				background-color: #f9f9f9;
+				border: 1px solid #ddd;
+				border-radius: 5px;
 			}
 		}
 	}
@@ -366,43 +373,6 @@ main {
 					}
 				}
 			}
-		}
-	}
-	.section-img {
-		padding: 5rem 0;
-		background-color: #333;
-
-		.article-img {
-			.gallery {
-				display: flex;
-				overflow-x: auto;
-				gap: 20px;
-
-				.image {
-					border-radius: 5rem;
-					object-fit: cover;
-					cursor: pointer;
-				}
-			}
-		}
-
-		.full-image-container {
-			display: none;
-			position: fixed;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			width: 100vw;
-			height: 100vh;
-			background-color: rgba(0, 0, 0, 0.8);
-			z-index: 999;
-			align-items: center;
-			justify-content: center;
-		}
-
-		.full-image {
-			max-width: 90%;
-			max-height: 90%;
 		}
 	}
 	.card-information {
@@ -538,7 +508,65 @@ main {
 			}
 		}
 	}
+	.clicker-goose {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background: linear-gradient(to bottom, #ffebcd, #ffcc80);
+		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		padding-bottom: 5vw;
+		padding-top: 5vw;
+		.clicker-container {
+			text-align: center;
+			background: white;
+			padding: 20px;
+			border-radius: 10px;
+			box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+			h3 {
+				font-size: 24px;
+				color: #444;
+			}
+
+			p {
+				font-size: 18px;
+				color: #666;
+				margin-bottom: 15px;
+			}
+
+			img {
+				width: 50vw;
+				height: 25vw;
+				object-fit: cover;
+				cursor: pointer;
+				transition: transform 0.3s ease, object-position 0.3s ease, border-radius 0.3s ease, box-shadow 0.3s ease;
+				object-position:top;
+				&:hover {
+					object-position: center;
+					transform: scale(1.05);
+					border-radius: 3vw;
+					box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+				  
+				}
+			}
+			button {
+				padding: 1vw 2vw;
+				font-size: 16px;
+				background: #ff9800;
+				color: white;
+				border: none;
+				border-radius: 1vw;
+				cursor: pointer;
+				width: 30vw;
+				margin-top: 2vw;
+				transition: background 0.3s ease;
+				&:hover {
+					background: #e68900;
+				}
+			}
+		}
+	}
 }
+
 footer {
 	font-family: monospace;
 	background-color: $newhelldark;
@@ -550,11 +578,11 @@ footer {
 		padding-top: 2vw;
 		align-items: center;
 		h3 {
-			font-size: 1.8rem;
+			font-size: 5vw;
 			color: $white;
 		}
 		p {
-			font-size: 1.5rem;
+			font-size: 2.5vw;
 			color: $gray;
 		}
 	}
@@ -562,12 +590,67 @@ footer {
 		margin-top: 2vw;
 		padding-bottom: 3vw;
 		a {
-			font-size: 2rem;
+			font-size: 5vw;
 			color: #fff;
 			text-decoration: none;
 			margin: 0 10px;
 			&:hover {
 				text-decoration: underline;
+			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	header {
+		.header__top {
+			height: 80px;
+			.btn__click-menu {
+				width: 80px;
+				height: 25px;
+				font-size: 14px;
+				padding: 8px 16px;
+			}
+		}
+		.header__main {
+			display: none;
+			height: 60vw;
+			padding-bottom: 2rem;
+			nav {
+				flex-direction: column;
+				align-items: center;
+				img {
+					margin-right: 0;
+					margin-top: 10px;
+				}
+				ul {
+					flex-direction: column;
+					gap: 10px;
+					margin-left: 0;
+					width: 90vw;
+					li {
+						font-size: 1.5rem;
+						padding: 20px;
+						width: 80vw;
+						text-align: center;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 426px) {
+	header {
+		.header__main {
+			height: 65%;
+			nav {
+				ul {
+					li {
+						font-size: 4vw;
+						padding: 1vw;
+					}
+				}
 			}
 		}
 	}
