@@ -112,14 +112,43 @@ btnClickGame.addEventListener('click', () => {
 
 	if (count === 25) {
 		gooseImg.src = 'imges/litle.webp'
-	}
-	else if (count === 50) {
+	} else if (count === 50) {
 		gooseImg.src = 'imges/Goose.webp'
-	}
-	else if (count === 75) {
+	} else if (count === 75) {
 		gooseImg.src = 'imges/modGoose.webp'
-	}
-	else if (count === 100) {
-		gooseImg.src = 'https://th.bing.com/th/id/R.06927f154ea6327d56b4a12f6a258bd6?rik=HLyknq7W4ZKFbA&pid=ImgRaw&r=0'
+	} else if (count === 100) {
+		gooseImg.src = '/imges/floating.webp'
+	} else if (count === 200) {
+		gooseImg.src = '/imges/fisher.webp'
+	} else if (count === 333) {
+		gooseImg.src = '/imges/arm.webp'
 	}
 })
+
+const infoAbout = document.querySelector('.information-Goose')
+const btnInfoAbout = document.querySelector('.btnOpenContainer')
+
+btnInfoAbout.addEventListener('click', () => {
+	if (infoAbout.style.display === 'none' || infoAbout.style.display === '') {
+		infoAbout.style.display = 'block'
+	} else {
+		infoAbout.style.display = 'none'
+	}
+})
+
+function toggleAnswer(element) {
+	const answer = document.getElementById(`answer${element}`)
+	if (answer.style.display === 'none' || answer.style.display === '') {
+		answer.style.display = 'block'
+	} else {
+		answer.style.display = 'none'
+	}
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+	document.getElementById('modalOverlay').style.display = 'block'
+})
+
+function closeModal() {
+	document.getElementById('modalOverlay').style.display = 'none'
+}

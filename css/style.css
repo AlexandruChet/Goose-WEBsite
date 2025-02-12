@@ -3,6 +3,11 @@
   padding-right: 5rem;
 }
 
+img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 li {
   list-style-type: none;
 }
@@ -141,7 +146,7 @@ header .header__main nav ul li:hover {
 }
 
 main .parallax {
-  background-image: url(https://th.bing.com/th/id/R.06927f154ea6327d56b4a12f6a258bd6?rik=HLyknq7W4ZKFbA&pid=ImgRaw&r=0);
+  background-image: url(/imges/floating.webp);
   height: 100vw;
   width: 100%;
   background-attachment: fixed;
@@ -152,8 +157,10 @@ main .parallax {
 main .content-section {
   font-family: Arial, Helvetica, sans-serif;
   padding-top: 100px;
-  background: url(https://cdn.pixabay.com/photo/2019/04/26/20/18/geese-4158565_1280.jpg);
+  background: url(/imges/geese.webp);
   background-size: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   background-position: center;
 }
 main .content-section .content .content-title span {
@@ -301,11 +308,11 @@ main .list-obj {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   background: #f0f0f0;
-  padding: 20px;
 }
 main .list-obj .object-list {
+  margin-top: 5vw;
+  margin-bottom: 5vw;
   background: #ffffff;
   padding: 30px;
   border-radius: 12px;
@@ -333,9 +340,12 @@ main .list-obj .object-list .list-objects ul li .button-obj {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 main .list-obj .object-list .list-objects ul li p {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   display: none;
 }
 main .card-information {
+  padding-top: 5vw;
+  padding-bottom: 5vw;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   background: url(https://www.hdwallpapers.in/download/bird_goose_on_water_4k_hd_birds-1366x768.jpg);
   background-size: cover;
@@ -516,6 +526,131 @@ main .clicker-goose .clicker-container button {
 }
 main .clicker-goose .clicker-container button:hover {
   background: #e68900;
+  font-family: monospace;
+}
+main .modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+main .modal-overlay .modal {
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  background-color: white;
+  padding: 20px;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1001;
+}
+main .modal-overlay .modal h1 {
+  font-size: 30;
+  font-family: monospace;
+  margin-top: 0;
+  font-size: 24px;
+  text-align: center;
+}
+main .modal-overlay .modal h3 {
+  margin-top: 5%;
+  font-size: 20px;
+  font-family: monospace;
+  color: #333;
+  font-size: 18px;
+  text-align: center;
+}
+main .modal-overlay .modal p {
+  margin-top: 5%;
+  font-family: monospace;
+  text-align: center;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+main .modal-overlay .modal button {
+  font-family: monospace;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 20px;
+  background-color: #4caf50;
+  transition: all 1s;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+main .modal-overlay .modal button:hover {
+  border-radius: 100px;
+  background-color: #00ff0d;
+}
+main .info-about-section {
+  padding-top: 5vw;
+  padding-bottom: 5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(https://www.hdwallpapers.in/download/bird_goose_on_water_4k_hd_birds-1366x768.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main .info-about-section .content-information-about {
+  text-align: center;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 40vw;
+}
+main .info-about-section .content-information-about .btnOpenContainer {
+  background: #0073e6;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 15px;
+  transition: background 0.3s ease;
+}
+main .info-about-section .content-information-about .btnOpenContainer:hover {
+  background: #005bb5;
+}
+main .info-about-section .content-information-about .information-Goose {
+  display: none;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+main .info-about-section .content-information-about .information-Goose img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+main .info-about-section .content-information-about .information-Goose h3 {
+  font-size: 24px;
+  color: #222;
+  margin-bottom: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  text-align: center;
+}
+main .info-about-section .content-information-about .information-Goose p {
+  font-size: 17px;
+  color: #444;
+  line-height: 1.7;
+  text-align: justify;
+  padding: 0 12px;
+  word-spacing: 2px;
 }
 
 footer {
